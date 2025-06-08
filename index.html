@@ -12,24 +12,12 @@
         }
     </style>
     <script>
-        async function redirect() {
-            try {
-                // Fetch current recipe URL from your Apps Script Web App
-                const response = await fetch("https://script.google.com/macros/s/AKfycbw073GZUcjdRWYwvz-AroZNqtrPy7Ycqf0MMv8FjA6BRhmXS9gErpDEjKTx_G-YtOsk/exec");
-                const url = await response.text();
-                console.log("Redirecting to:", url);
-                window.location.href = url.trim();
-            } catch (e) {
-                console.error("Failed to fetch URL:", e);
-                document.getElementById("status").innerText = "Error loading recipe link. Please try again later.";
-            }
-        }
-
-        redirect();
+        // Let browser follow the redirect via full navigation
+        window.location.href = "https://script.google.com/macros/s/AKfycbw073GZUcjdRWYwvz-AroZNqtrPy7Ycqf0MMv8FjA6BRhmXS9gErpDEjKTx_G-YtOsk/exec";
     </script>
 </head>
 <body>
     <h1>Redirecting to Today’s Recipe...</h1>
-    <p id="status">Please wait a moment.</p>
+    <p>If you are not redirected, <a href="https://script.google.com/macros/s/AKfycbw073GZUcjdRWYwvz-AroZNqtrPy7Ycqf0MMv8FjA6BRhmXS9gErpDEjKTx_G-YtOsk/exec">click here</a>.</p>
 </body>
 </html>
